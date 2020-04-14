@@ -15,6 +15,8 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
  1. 00:02.0 VGA compatible controller: Intel Corporation Device 3e92 (prog-if 00 [VGA controller])
  2. 01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P620] (rev a1) (prog-if 00 [VGA controller])
 
+## Disable Secure Boot
+
 
 # Comments along the way:
     When no nvidia library package or whatever is installed for some reason when running nvidia-smi it is recommended to install the following 2 packages:
@@ -42,10 +44,24 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
                 4. sudo update-initramfs -u
             2. Alternative B: (On a Fresh system)
                 1. sudo apt install nvidia-utils-390
+                2. sudo reboot -> No changes
             3. Alternative C:
+                1. sudo apt install --reinstall nvidia-driver-430
+                    Warning: 'The home dir /nonexistent you specified can't be accessed: No such file or directory'
             4. Alternative D:
+                    sudo apt purge 'nvidia.*'
+                    sudo add-apt-repository ppa:graphics-drivers/ppa
+                    sudo apt update
+                    sudo apt install nvidia-390 # Failed No such package
 
+            5. Alternative D:
+                    sudo apt purge 'nvidia.*'
+                    sudo add-apt-repository ppa:graphics-drivers/ppa
+                    sudo apt update
+                    sudo apt install nvidia-390
 
+            6. Alternative D:
+                    sudo ubuntu-drivers autoinstall
 
 1. Broken pipeline for file:
     1. Command: Various install commands
