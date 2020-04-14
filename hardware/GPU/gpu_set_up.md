@@ -27,10 +27,17 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
     1. Command: nvidia-smi
     2. Message: NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
     3. Solution: TODO
-     1. sudo apt install nvidia-prime
-     2. sudo prime-select nvidia
-     3.  Please check if the file /lib/modprobe.d/blacklist-nvidia.conf exists (if does DELETE IT!)
-     4. sudo update-initramfs -u
+        1. Alternative A: (Fried my system!)
+            1. sudo apt install nvidia-prime
+            2. sudo prime-select nvidia
+            3.  Please check if the file /lib/modprobe.d/blacklist-nvidia.conf exists (if does DELETE IT!)
+            4. sudo update-initramfs -u
+        2. Alternative B: (On a Fresh system)
+            1. sudo apt install nvidia-utils-390
+        3. Alternative C:
+        4. Alternative D:
+
+
 
 1. Broken pipeline for file:
     1. Command: Various install commands
