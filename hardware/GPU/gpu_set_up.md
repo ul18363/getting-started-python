@@ -23,7 +23,7 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
         
 # Common Problems and how to fix them 
 
-0. Error:
+0. NVIDIA driver not working:
     1. Command: nvidia-smi
     2. Command 'nvidia-smi' not found, but can be installed with:
         sudo apt install nvidia-340      
