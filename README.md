@@ -22,7 +22,7 @@ A repository to hold same basic guidances on how to set up my working environmen
 
 ---------------------------------------------------------------------------------------------------
 # Virtual environment for Anaconda/Conda users
-<!-- It Seems that Anaconda has some limitations and only let you use python 3.7 or 2.7 -->
+<!-- It Seems that Anaconda has some limitations and only let you use python 3.7 or 2.7 in the UI-->
 1.  Install Anaconda:
 2.  Create environment in the UI or through:
         conda create -n myenvpython38 python=3.8 
@@ -42,3 +42,9 @@ A repository to hold same basic guidances on how to set up my working environmen
 
 6.  If in same computer wanna clone your environment to branch away:
         conda create --clone myenvpython38 --name mynewpy38
+7. Delete environment if something goes wrong:
+    conda remove --name ENVNAME --all
+
+---------------------------------------------------------------------------------------------------
+# New environment msyself Python 3.8 for a new project
+conda create --clone myenvpython38 --name project_name
