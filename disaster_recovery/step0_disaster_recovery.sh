@@ -10,6 +10,7 @@ sudo dpkg -i gitkraken-amd64.deb
 ### Note: If something fails you can use 'sudo apt --fix-broken install' to get the dependencies
 # Install Chromium
 sudo apt-get install chromium-browser
+sudo snap connect chromium:removable-media # Allow chromium access to external drives
 # Install Sublime Text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list

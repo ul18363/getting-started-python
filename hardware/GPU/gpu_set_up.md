@@ -16,7 +16,8 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
  2. 01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P620] (rev a1) (prog-if 00 [VGA controller])
 
 ## Disable Secure Boot
-
+1. Command:
+    sudo mokutil --disable-validation.
 
 # Comments along the way:
     When no nvidia library package or whatever is installed for some reason when running nvidia-smi it is recommended to install the following 2 packages:
@@ -32,6 +33,11 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
             sudo apt install nvidia-cuda-toolkit
         2. Solution:
             sudo apt install nvidia-cuda-toolkit
+            0. Result:
+                nvcc: NVIDIA (R) Cuda compiler driver
+                Copyright (c) 2005-2017 NVIDIA Corporation
+                Built on Fri_Nov__3_21:07:56_CDT_2017
+                Cuda compilation tools, release 9.1, V9.1.85
 
     1. Command: nvidia-smi
         1. Message: 
@@ -42,7 +48,36 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
                 1. sudo apt install nvidia-utils-390 -> Gets me to 'NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver.'
                 2. Continuation: Change the driver from 'Software & Updates' to nvidia 395.-> UEFI Secure Boot enabled -> Is being reported that secure boot causes problem and I need to disable afterwards
         2. Message: NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
-            1. Solution: TODO
+            1. Working Solution: 
+                sudo apt install nvidia-cuda-toolkit
+                sudo ubuntu-drivers autoinstall
+                sudo reboot
+                F12 as soon as reboots -> Make sure Secure Boot is disable (check BIOS)
+
+                Result:
+                    $ nvidia-smi
+                    Wed Apr 15 00:17:34 2020       
+                    +-----------------------------------------------------------------------------+
+                    | NVIDIA-SMI 440.82       Driver Version: 440.82       CUDA Version: 10.2     |
+                    |-------------------------------+----------------------+----------------------+
+                    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+                    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+                    |===============================+======================+======================|
+                    |   0  Quadro P620         Off  | 00000000:01:00.0 Off |                  N/A |
+                    | 34%   49C    P0    N/A /  N/A |    446MiB /  2000MiB |     13%      Default |
+                    +-------------------------------+----------------------+----------------------+
+                                                                                                   
+                    +-----------------------------------------------------------------------------+
+                    | Processes:                                                       GPU Memory |
+                    |  GPU       PID   Type   Process name                             Usage      |
+                    |=============================================================================|
+                    |    0      1505      G   /usr/lib/xorg/Xorg                           230MiB |
+                    |    0      1679      G   /usr/bin/gnome-shell                         113MiB |
+                    |    0      2301      G   ...AAAAAAAAAAAACAAAAAAAAAA= --shared-files    98MiB |
+                    +-----------------------------------------------------------------------------+
+
+
+            2. Alternative Solution: 
                 1. Alternative A: (Fried my system!)
                     1. sudo apt install nvidia-prime
                     2. sudo prime-select nvidia
