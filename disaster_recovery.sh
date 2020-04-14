@@ -15,3 +15,19 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
+# Install Anaconda
+cd /tmp
+sudo apt install curl # Dependency to install it
+# curl -O https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh # Old version (Python 3.6)
+
+curl -O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh # Newer version (Python 3.7)
+# Use the sha256sum command to verify the script checksum:
+# sha256sum Anaconda3-5.2.0-Linux-x86_64.sh
+# Make sure the hash printed from the command above matches the one available at the Anaconda with Python 3 on 64-bit Linux page for your appropriate Anaconda version.
+# https://docs.anaconda.com/anaconda/install/hashes/Anaconda3-5.2.0-Linux-x86_64.sh-hash.html
+# bash Anaconda3-5.2.0-Linux-x86_64.sh
+bash Anaconda3-2020.02-Linux-x86_64.sh
+# Press ENTER to continue
+
+# Install VLC
+sudo apt-get install vlc
