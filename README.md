@@ -48,3 +48,7 @@ A repository to hold same basic guidances on how to set up my working environmen
 ---------------------------------------------------------------------------------------------------
 # New environment msyself Python 3.8 for a new project
 conda create --clone myenvpython38 --name project_name
+
+------------------------------------------------------------------------------------------------
+# Check your graphics card model:
+lspci | grep VGA
