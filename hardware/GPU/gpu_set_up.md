@@ -25,17 +25,25 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
 
 0. Error:
     1. Command: nvidia-smi
-    2. Message: NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
-    3. Solution: TODO
-        1. Alternative A: (Fried my system!)
-            1. sudo apt install nvidia-prime
-            2. sudo prime-select nvidia
-            3.  Please check if the file /lib/modprobe.d/blacklist-nvidia.conf exists (if does DELETE IT!)
-            4. sudo update-initramfs -u
-        2. Alternative B: (On a Fresh system)
-            1. sudo apt install nvidia-utils-390
-        3. Alternative C:
-        4. Alternative D:
+    2. Command 'nvidia-smi' not found, but can be installed with:
+        sudo apt install nvidia-340      
+        sudo apt install nvidia-utils-390
+        1. Solution:
+            1. sudo apt install nvidia-utils-390 -> Gets me to 'NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver.'
+            2. Continuation: Change the driver from 'Software & Updates' to nvidia 395.-> UEFI Secure Boot enabled -> Is being reported that secure boot causes problem and I need to disable afterwards
+
+
+    3. Message: NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+        1. Solution: TODO
+            1. Alternative A: (Fried my system!)
+                1. sudo apt install nvidia-prime
+                2. sudo prime-select nvidia
+                3.  Please check if the file /lib/modprobe.d/blacklist-nvidia.conf exists (if does DELETE IT!)
+                4. sudo update-initramfs -u
+            2. Alternative B: (On a Fresh system)
+                1. sudo apt install nvidia-utils-390
+            3. Alternative C:
+            4. Alternative D:
 
 
 
