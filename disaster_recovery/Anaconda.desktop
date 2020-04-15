@@ -6,7 +6,7 @@ GenericName=Anaconda
 Comment=Scientific Python Development Environment - Python3
 Exec=bash -c 'export PATH="/home/bruno/anaconda3/bin:$PATH" && /home/bruno/anaconda3/bin/anaconda-navigator'
 Categories=Development;Science;IDE;Qt;Education;
-Icon=/home/bruno/Picturesanaconda_icon.png
+Icon=/home/bruno/Picturesanaconda.png
 Terminal=false
 StartupNotify=true
 MimeType=text/x-python;
