@@ -29,7 +29,8 @@ curl -O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh # Ne
 # bash Anaconda3-5.2.0-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 # Press ENTER to continue
-
+# Install Add in for spyder to run jupyter notebooks in spyder
+conda install spyder-notebook -c spyder-ide
 # Install VLC
 sudo apt-get install vlc
 # Install DataGrip

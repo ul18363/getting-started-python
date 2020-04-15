@@ -19,6 +19,10 @@ Right now I'm using a NVIDIA Quadro P620 graphic card and an Intel  card.
 1. Command:
     sudo mokutil --disable-validation.
 
+## Enable TensorFlow usage in the CPU
+1. Command (within desired python environment):
+    conda install tensorflow-gpu
+
 # Comments along the way:
     When no nvidia library package or whatever is installed for some reason when running nvidia-smi it is recommended to install the following 2 packages:
         sudo apt install nvidia-340      
