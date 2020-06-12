@@ -1,0 +1,1 @@
+xfreerdp /multimon /u:ul18363@bristol.ac.uk /p:46636520\!Brun /v:it077171.wks.bris.ac.uk /sec:nla /g:uob-gateway.cse.bris.ac.uk /gu:ul18363@bristol.ac.uk /gp:46636520\!Brun  +auto-reconnect /auto-reconnect-max-retries:20

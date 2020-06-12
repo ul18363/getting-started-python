@@ -35,3 +35,5 @@ conda install spyder-notebook -c spyder-ide
 sudo apt-get install vlc
 # Install DataGrip
 sudo snap install datagrip --classic
+# Install spyder3 nothing against 4 however 3 is way faster to show the variables
+sudo apt-get install spyder3
